@@ -1,23 +1,36 @@
 import { useState } from "react"
 import "./App.less"
-import { Button } from "antd"
+import { Button, Layout } from "antd"
+
+import HeaderBar from "@/pages/layout/headerBar"
+
+const Sider = Layout.Sider
+const Header = Layout.Header
+const Content = Layout.Content
+const Footer = Layout.Footer
 
 function App() {
     const [count, setCount] = useState(0)
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    <Button
-                        type="primary"
-                        onClick={() => setCount((count) => count + 1)}
-                    >
-                        count is: {count}
-                    </Button>
-                </p>
-            </header>
-        </div>
+        <Layout>
+            <Header><HeaderBar></HeaderBar></Header>
+            <Layout>
+                <Sider>left sidebar</Sider>
+                <Content>
+                    <p>
+                        <Button
+                            type="primary"
+                            onClick={() => setCount((count) => count + 1)}
+                        >
+                            count is: {count}
+                        </Button>
+                    </p>
+                </Content>
+                <Sider>right sidebar</Sider>
+            </Layout>
+            <Footer>footer</Footer>
+        </Layout>
     )
 }
 
