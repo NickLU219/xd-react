@@ -13,8 +13,10 @@ function App() {
     const [count, setCount] = useState(0)
 
     return (
-        <Layout>
-            <Header><HeaderBar></HeaderBar></Header>
+        <Layout style={{ height: "100%" }}>
+            <Header>
+                <HeaderBar></HeaderBar>
+            </Header>
             <Layout>
                 <Sider>left sidebar</Sider>
                 <Content>

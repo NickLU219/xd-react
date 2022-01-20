@@ -1,11 +1,15 @@
 import HeaderBar from "./components/HeaderBar"
-import HeaderLogo from "./components/HeaderLogo"
+import HeaderLogo, { HeaderLogoProps } from "./components/HeaderLogo"
+import style from "./index.module.less"
 
 export default function HeaderBarLayout() {
-    return (
-        <>
-            <HeaderLogo></HeaderLogo>
+	const logoProps: HeaderLogoProps = {
+		url: "aaaaaa"
+	}
+	return (
+        <div className={style.header}>
+			<HeaderLogo {...logoProps}></HeaderLogo>
             <HeaderBar></HeaderBar>
-        </>
+        </div>
     )
 }
